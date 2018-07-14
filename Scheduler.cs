@@ -43,7 +43,7 @@ namespace MedilabMailer
                 body = body.Replace("{UserName}", "Maxi"); //replacing the required things  
                 body = body.Replace("{Title}", "Creacion de Usuario");
                 body = body.Replace("{message}", "Bienvenido al sistema");
-                Mailer.Mailer.sendEmail("maximiliano.bordon@gmail.com", "prueba", body);                         
+                Mailer.Mailer.sendEmail("maximiliano.bordon@gmail.com", "prueba", body);                      
 
             
 
