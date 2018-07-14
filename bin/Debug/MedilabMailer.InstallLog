@@ -1,0 +1,34 @@
+﻿Instalando ensamblado 'C:\Users\DELL\Documents\Visual Studio 2015\Projects\MedilabMailer\MedilabMailer\bin\Debug\MedilabMailer.exe'.
+Los parámetros afectados son:
+   logtoconsole = 
+   logfile = C:\Users\DELL\Documents\Visual Studio 2015\Projects\MedilabMailer\MedilabMailer\bin\Debug\MedilabMailer.InstallLog
+   assemblypath = C:\Users\DELL\Documents\Visual Studio 2015\Projects\MedilabMailer\MedilabMailer\bin\Debug\MedilabMailer.exe
+Instalando el servicio MedilabMailer...
+El servicio MedilabMailer se ha instalado correctamente.
+Creando el origen de EventLog MedilabMailer en el registro Application...
+Confirmando ensamblado 'C:\Users\DELL\Documents\Visual Studio 2015\Projects\MedilabMailer\MedilabMailer\bin\Debug\MedilabMailer.exe'.
+Los parámetros afectados son:
+   logtoconsole = 
+   logfile = C:\Users\DELL\Documents\Visual Studio 2015\Projects\MedilabMailer\MedilabMailer\bin\Debug\MedilabMailer.InstallLog
+   assemblypath = C:\Users\DELL\Documents\Visual Studio 2015\Projects\MedilabMailer\MedilabMailer\bin\Debug\MedilabMailer.exe
+Desinstalando ensamblado 'C:\Users\DELL\Documents\Visual Studio 2015\Projects\MedilabMailer\MedilabMailer\bin\Debug\MedilabMailer.exe'.
+Los parámetros afectados son:
+   logtoconsole = 
+   logfile = C:\Users\DELL\Documents\Visual Studio 2015\Projects\MedilabMailer\MedilabMailer\bin\Debug\MedilabMailer.InstallLog
+   assemblypath = C:\Users\DELL\Documents\Visual Studio 2015\Projects\MedilabMailer\MedilabMailer\bin\Debug\MedilabMailer.exe
+Quitando el origen de EventLog MedilabMailer.
+Se está quitando el servicio MedilabMailer del sistema...
+El servicio MedilabMailer se ha quitado correctamente del sistema.
+Instalando ensamblado 'C:\Users\DELL\Documents\Visual Studio 2015\Projects\MedilabMailer\MedilabMailer\bin\Debug\MedilabMailer.exe'.
+Los parámetros afectados son:
+   logtoconsole = 
+   logfile = C:\Users\DELL\Documents\Visual Studio 2015\Projects\MedilabMailer\MedilabMailer\bin\Debug\MedilabMailer.InstallLog
+   assemblypath = C:\Users\DELL\Documents\Visual Studio 2015\Projects\MedilabMailer\MedilabMailer\bin\Debug\MedilabMailer.exe
+Instalando el servicio MedilabMailer...
+El servicio MedilabMailer se ha instalado correctamente.
+Creando el origen de EventLog MedilabMailer en el registro Application...
+Confirmando ensamblado 'C:\Users\DELL\Documents\Visual Studio 2015\Projects\MedilabMailer\MedilabMailer\bin\Debug\MedilabMailer.exe'.
+Los parámetros afectados son:
+   logtoconsole = 
+   logfile = C:\Users\DELL\Documents\Visual Studio 2015\Projects\MedilabMailer\MedilabMailer\bin\Debug\MedilabMailer.InstallLog
+   assemblypath = C:\Users\DELL\Documents\Visual Studio 2015\Projects\MedilabMailer\MedilabMailer\bin\Debug\MedilabMailer.exe

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MedicinaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Novedad">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FechaPublicacion" Type="DateTime" Precision="3" />
+    <Property Name="IdTemplate" Type="Int32" Nullable="false" />
+    <Property Name="mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Template" Relationship="Self.FK__Novedad__IdTempl__52593CB8" FromRole="Novedad" ToRole="Template" />
+  </EntityType>
+  <EntityType Name="Template">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Novedad" Relationship="Self.FK__Novedad__IdTempl__52593CB8" FromRole="Template" ToRole="Novedad" />
+  </EntityType>
+  <Association Name="FK__Novedad__IdTempl__52593CB8">
+    <End Role="Template" Type="Self.Template" Multiplicity="1" />
+    <End Role="Novedad" Type="Self.Novedad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Template">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Novedad">
+        <PropertyRef Name="IdTemplate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MedicinaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Novedad" EntityType="Self.Novedad" />
+    <EntitySet Name="Template" EntityType="Self.Template" />
+    <AssociationSet Name="FK__Novedad__IdTempl__52593CB8" Association="Self.FK__Novedad__IdTempl__52593CB8">
+      <End Role="Template" EntitySet="Template" />
+      <End Role="Novedad" EntitySet="Novedad" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

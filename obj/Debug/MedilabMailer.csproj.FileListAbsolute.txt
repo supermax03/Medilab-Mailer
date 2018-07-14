@@ -1,0 +1,12 @@
+c:\users\dell\documents\visual studio 2015\Projects\MedilabMailer\MedilabMailer\bin\Debug\MedilabMailer.exe.config
+c:\users\dell\documents\visual studio 2015\Projects\MedilabMailer\MedilabMailer\bin\Debug\MedilabMailer.exe
+c:\users\dell\documents\visual studio 2015\Projects\MedilabMailer\MedilabMailer\bin\Debug\MedilabMailer.pdb
+c:\users\dell\documents\visual studio 2015\Projects\MedilabMailer\MedilabMailer\bin\Debug\EntityFramework.dll
+c:\users\dell\documents\visual studio 2015\Projects\MedilabMailer\MedilabMailer\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\dell\documents\visual studio 2015\Projects\MedilabMailer\MedilabMailer\bin\Debug\EntityFramework.xml
+c:\users\dell\documents\visual studio 2015\Projects\MedilabMailer\MedilabMailer\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\dell\documents\visual studio 2015\Projects\MedilabMailer\MedilabMailer\obj\Debug\MedilabMailer.csprojResolveAssemblyReference.cache
+c:\users\dell\documents\visual studio 2015\Projects\MedilabMailer\MedilabMailer\obj\Debug\MedilabMailer.exe
+c:\users\dell\documents\visual studio 2015\Projects\MedilabMailer\MedilabMailer\obj\Debug\MedilabMailer.pdb
+c:\users\dell\documents\visual studio 2015\Projects\MedilabMailer\MedilabMailer\obj\Debug\MedilabMailer.ProjectInstaller.resources
+c:\users\dell\documents\visual studio 2015\Projects\MedilabMailer\MedilabMailer\obj\Debug\MedilabMailer.csproj.GenerateResource.Cache
