@@ -9,3 +9,4 @@ c:\users\dell\documents\visual studio 2015\Projects\MedilabMailer\MedilabMailer\
 c:\users\dell\documents\visual studio 2015\Projects\MedilabMailer\MedilabMailer\obj\Debug\MedilabMailer.pdb
 c:\users\dell\documents\visual studio 2015\Projects\MedilabMailer\MedilabMailer\obj\Debug\MedilabMailer.ProjectInstaller.resources
 c:\users\dell\documents\visual studio 2015\Projects\MedilabMailer\MedilabMailer\obj\Debug\MedilabMailer.csproj.GenerateResource.Cache
+c:\users\dell\documents\visual studio 2015\Projects\MedilabMailer\MedilabMailer\obj\Debug\MedilabMailer.csprojResolveAssemblyReference.cache

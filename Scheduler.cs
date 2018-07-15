@@ -55,6 +55,7 @@ namespace MedilabMailer
                 List<Novedad> novedades = db.Novedad.Take(10).ToList();
                 foreach (Novedad novedad in novedades)
                 {
+                    //Se envia mail por cada novedad
                     string body = db.Template.Where(s => s.Id.Equals(novedad.Template.Id)).Select(s => s.Content).First();
                     body = body.Replace("{UserName}", novedad.Usuario.Username); 
                     body = body.Replace("{Title}", novedad.Template.Title);
