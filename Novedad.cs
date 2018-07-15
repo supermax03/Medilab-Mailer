@@ -17,8 +17,9 @@ namespace MedilabMailer
         public int Id { get; set; }
         public Nullable<System.DateTime> FechaPublicacion { get; set; }
         public int IdTemplate { get; set; }
-        public string mail { get; set; }
+        public Nullable<int> IdUser { get; set; }
     
+        public virtual Usuario Usuario { get; set; }
         public virtual Template Template { get; set; }
     }
 }

@@ -26,6 +26,7 @@ namespace MedilabMailer
         }
     
         public virtual DbSet<Novedad> Novedad { get; set; }
+        public virtual DbSet<Usuario> Usuario { get; set; }
         public virtual DbSet<Template> Template { get; set; }
     }
 }

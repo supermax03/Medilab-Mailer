@@ -1,5 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="MedicinaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MedicinaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Novedad" EntityType="MedicinaModel.Novedad" />
+    <EntitySet Name="Usuario" EntityType="MedicinaModel.Usuario" />
+    <AssociationSet Name="FK__Novedad__IdUser__5812160E" Association="MedicinaModel.FK__Novedad__IdUser__5812160E">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Novedad" EntitySet="Novedad" />
+    </AssociationSet>
+    <EntitySet Name="Template" EntityType="MedicinaModel.Template" />
+    <AssociationSet Name="FK__Novedad__IdTempl__571DF1D5" Association="MedicinaModel.FK__Novedad__IdTempl__571DF1D5">
+      <End Role="Template" EntitySet="Template" />
+      <End Role="Novedad" EntitySet="Novedad" />
+    </AssociationSet>
+  </EntityContainer>
   <EntityType Name="Novedad">
     <Key>
       <PropertyRef Name="Id" />
@@ -7,21 +20,49 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="FechaPublicacion" Type="DateTime" Precision="3" />
     <Property Name="IdTemplate" Type="Int32" Nullable="false" />
-    <Property Name="mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Template" Relationship="Self.FK__Novedad__IdTempl__52593CB8" FromRole="Novedad" ToRole="Template" />
+    <Property Name="IdUser" Type="Int32" />
+    <NavigationProperty Name="Usuario" Relationship="MedicinaModel.FK__Novedad__IdUser__5812160E" FromRole="Novedad" ToRole="Usuario" />
+    <NavigationProperty Name="Template" Relationship="MedicinaModel.FK__Novedad__IdTempl__571DF1D5" FromRole="Novedad" ToRole="Template" />
   </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RegDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Rol" Type="Int32" Nullable="false" />
+    <Property Name="Estado" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Novedad" Relationship="MedicinaModel.FK__Novedad__IdUser__5812160E" FromRole="Usuario" ToRole="Novedad" />
+  </EntityType>
+  <Association Name="FK__Novedad__IdUser__5812160E">
+    <End Type="MedicinaModel.Usuario" Role="Usuario" Multiplicity="0..1" />
+    <End Type="MedicinaModel.Novedad" Role="Novedad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Novedad">
+        <PropertyRef Name="IdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityType Name="Template">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Novedad" Relationship="Self.FK__Novedad__IdTempl__52593CB8" FromRole="Template" ToRole="Novedad" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Msg" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Novedad" Relationship="MedicinaModel.FK__Novedad__IdTempl__571DF1D5" FromRole="Template" ToRole="Novedad" />
   </EntityType>
-  <Association Name="FK__Novedad__IdTempl__52593CB8">
-    <End Role="Template" Type="Self.Template" Multiplicity="1" />
-    <End Role="Novedad" Type="Self.Novedad" Multiplicity="*" />
+  <Association Name="FK__Novedad__IdTempl__571DF1D5">
+    <End Type="MedicinaModel.Template" Role="Template" Multiplicity="1" />
+    <End Type="MedicinaModel.Novedad" Role="Novedad" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Template">
         <PropertyRef Name="Id" />
@@ -31,12 +72,4 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="MedicinaEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Novedad" EntityType="Self.Novedad" />
-    <EntitySet Name="Template" EntityType="Self.Template" />
-    <AssociationSet Name="FK__Novedad__IdTempl__52593CB8" Association="Self.FK__Novedad__IdTempl__52593CB8">
-      <End Role="Template" EntitySet="Template" />
-      <End Role="Novedad" EntitySet="Novedad" />
-    </AssociationSet>
-  </EntityContainer>
 </Schema>

@@ -12,19 +12,21 @@ namespace MedilabMailer
     using System;
     using System.Collections.Generic;
     
-    public partial class Template
+    public partial class Usuario
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Template()
+        public Usuario()
         {
             this.Novedad = new HashSet<Novedad>();
         }
     
         public int Id { get; set; }
-        public string Nombre { get; set; }
-        public string Content { get; set; }
-        public string Title { get; set; }
-        public string Msg { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public System.DateTime RegDate { get; set; }
+        public string Email { get; set; }
+        public int Rol { get; set; }
+        public int Estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Novedad> Novedad { get; set; }

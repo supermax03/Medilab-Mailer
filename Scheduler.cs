@@ -38,16 +38,8 @@ namespace MedilabMailer
             
             try
             {
-                db = new MedicinaEntities();
-                string body = db.Template.Where(s => s.Id.Equals(1)).Select(s=>s.Content).First();
-                body = body.Replace("{UserName}", "Maxi"); //replacing the required things  
-                body = body.Replace("{Title}", "Creacion de Usuario");
-                body = body.Replace("{message}", "Bienvenido al sistema");
-                Mailer.Mailer.sendEmail("maximiliano.bordon@gmail.com", "prueba", body);                      
-
-            
-
-
+                procesarNovedades();          
+                
             }
             catch (Exception exc)
             {
@@ -55,6 +47,33 @@ namespace MedilabMailer
                 Library.WriteErrorLog("Error" + exc.Message);
             }
         }
+        private void procesarNovedades()
+        {
+            try
+            {
+                db = new MedicinaEntities();
+                List<Novedad> novedades = db.Novedad.Take(10).ToList();
+                foreach (Novedad novedad in novedades)
+                {
+                    string body = db.Template.Where(s => s.Id.Equals(novedad.Template.Id)).Select(s => s.Content).First();
+                    body = body.Replace("{UserName}", novedad.Usuario.Username); 
+                    body = body.Replace("{Title}", novedad.Template.Title);
+                    body = body.Replace("{message}", novedad.Template.Msg.Replace("{password}",novedad.Usuario.Password));
+                    Mailer.Mailer.sendEmail(novedad.Usuario.Email, "Medilab Informa", body);
+                    db.Novedad.Remove(novedad);
+                    db.SaveChanges();
+                }
+            }
+            catch(Exception exc)
+            {
+                Library.WriteErrorLog("Error" + exc.InnerException.Message);
+                Library.WriteErrorLog("Error" + exc.Message);
+
+            }
+
+
+        }
+
 
 
         protected override void OnStop()

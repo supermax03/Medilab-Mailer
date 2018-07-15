@@ -96,6 +96,9 @@
     <Compile Include="Template.cs">
       <DependentUpon>MedilabModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Usuario.cs">
+      <DependentUpon>MedilabModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
